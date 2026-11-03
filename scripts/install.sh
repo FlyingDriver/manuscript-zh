@@ -49,10 +49,23 @@ fi
 
 [ -x "$HERE/manuscript" ] || die "找不到可执行文件 $HERE/manuscript"
 
+# 目标前缀不存在时先尝试创建（$HOME/.local 常常还没建），
+# 创建失败才判断为不可写。直接测试 [ -w ] 会把「不存在」误判成「不可写」。
+if [ ! -d "$PREFIX" ]; then
+    if ! mkdir -p "$PREFIX" 2>/dev/null; then
+        if [ "$(id -u)" -ne 0 ]; then
+            echo "错误: 无法创建 $PREFIX" >&2
+            echo "可改用用户目录安装:" >&2
+            echo "  PREFIX=\$HOME/.local ./install.sh" >&2
+            exit 1
+        fi
+    fi
+fi
+
 if [ ! -w "$PREFIX" ] && [ "$(id -u)" -ne 0 ]; then
-    echo "提示: $PREFIX 不可写且非 root。"
-    echo "可改用用户目录安装:"
-    echo "  PREFIX=\$HOME/.local ./install.sh"
+    echo "错误: $PREFIX 不可写且非 root。" >&2
+    echo "可改用用户目录安装:" >&2
+    echo "  PREFIX=\$HOME/.local ./install.sh" >&2
     exit 1
 fi
 
@@ -62,8 +75,7 @@ echo "== 安装到 $PREFIX =="
 install -Dm755 "$HERE/manuscript"                        "$BINDIR/manuscript"
 install -Dm644 "$HERE/data/$APP_ID.desktop"              "$DATADIR/applications/$APP_ID.desktop"
 install -Dm644 "$HERE/data/$APP_ID.metainfo.xml"         "$DATADIR/metainfo/$APP_ID.metainfo.xml"
-install -Dm644 "$HERE/data/icons/hicolor/scalable/apps/$APP_ID.svg" \\
-                                                          "$DATADIR/icons/hicolor/scalable/apps/$APP_ID.svg"
+install -Dm644 "$HERE/data/icons/hicolor/scalable/apps/$APP_ID.svg" "$DATADIR/icons/hicolor/scalable/apps/$APP_ID.svg"
 [ -f "$HERE/LICENSE" ] && install -Dm644 "$HERE/LICENSE" "$DATADIR/licenses/manuscript/LICENSE" || true
 
 update-desktop-database "$DATADIR/applications" 2>/dev/null || true
