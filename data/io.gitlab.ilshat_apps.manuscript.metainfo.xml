@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.gitlab.ilshat_apps.manuscript</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Manuscript</name>
+  <summary>Read and edit Markdown files</summary>
+  <description>
+    <p>
+      Open your Markdown files for beautiful, distraction-free reading with
+      syntax-highlighted code blocks, tables, task lists, and clickable links.
+      When you need to edit, switch to a comfortable editor with live preview.
+    </p>
+    <p>
+      Manuscript renders Markdown natively without a web engine, resulting in
+      instant startup and low memory usage. It follows your system theme
+      automatically and adapts to any screen size, from phones to desktops.
+    </p>
+    <ul>
+      <li>Three view modes: Read, Edit, and Split with live preview</li>
+      <li>Syntax-highlighted code blocks in 100+ languages</li>
+      <li>Tables rendered as a grid with borders, header row and inline formatting</li>
+      <li>Task list checkboxes</li>
+      <li>Full-text search with match highlighting</li>
+      <li>Customizable font, spacing, and content width</li>
+      <li>File watching with automatic reload</li>
+      <li>Recent files, drag and drop, printing</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.gitlab.ilshat_apps.manuscript.desktop</launchable>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#dceaf7</color>
+    <color type="primary" scheme_preference="dark">#1a3a5c</color>
+  </branding>
+
+  <developer id="io.gitlab.ilshat_apps">
+    <name>Ilshat Ishdavletov</name>
+  </developer>
+
+  <url type="homepage">https://gitlab.com/ilshat-apps/manuscript</url>
+  <url type="bugtracker">https://gitlab.com/ilshat-apps/manuscript/-/issues</url>
+  <url type="vcs-browser">https://gitlab.com/ilshat-apps/manuscript</url>
+  <url type="donation">https://ko-fi.com/ilshat</url>
+
+  <content_rating type="oars-1.1" />
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://gitlab.com/ilshat-apps/manuscript/-/raw/main/data/screenshots/light.png</image>
+      <caption>Reading a Markdown file in light theme</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/ilshat-apps/manuscript/-/raw/main/data/screenshots/light-rich-table.png</image>
+      <caption>Tables rendered as a grid with borders and a header row</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/ilshat-apps/manuscript/-/raw/main/data/screenshots/dark-rich-table.png</image>
+      <caption>Tables in dark theme</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/ilshat-apps/manuscript/-/raw/main/data/screenshots/dark.png</image>
+      <caption>Reading a Markdown file in dark theme</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/ilshat-apps/manuscript/-/raw/main/data/screenshots/light-split.png</image>
+      <caption>Split view with editor and live preview</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/ilshat-apps/manuscript/-/raw/main/data/screenshots/dark-split.png</image>
+      <caption>Split view in dark theme</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.6.2" date="2026-11-02">
+      <description>
+        <p>Selecting text inside a table taller than the window no longer scrolls back to the table's first row. Adds a Support Development link (Ko-fi). Thanks to Russell Haley for two detailed reviews.</p>
+      </description>
+    </release>
+    <release version="1.6.1" date="2026-10-19">
+      <description>
+        <p>Large documents open several times faster and use far less memory: the rendered view draws only what is on screen, and tables are built as you scroll to them. A 1 MB file with hundreds of tables now shows in about 4 seconds instead of 10, using about 90 MiB instead of 540 MiB.</p>
+      </description>
+    </release>
+    <release version="1.6.0" date="2026-10-19">
+      <description>
+        <p>Navigation, copying and speed.</p>
+        <ul>
+          <li>Back / forward history across files, wikilinks and outline jumps (header arrows, Alt+Left/Right, mouse side buttons); every file remembers its own scroll position</li>
+          <li>Copying several lines or a table from the rendered view yields Markdown that pastes intact into another file</li>
+          <li>Search finds text inside table cells</li>
+          <li>Images inside HTML blocks (GitHub README style) are shown, side by side</li>
+          <li>Single newlines join into flowing paragraphs, as on GitHub (optional); numbered lists show numbers; horizontal rules and list spacing fixed</li>
+          <li>Automatic reload now works with editors that save atomically</li>
+          <li>Faster re-rendering: images are decoded once at display size and cached, syntax highlighting is cached, the spell checker loads only when enabled</li>
+          <li>Fixed a jump to the top when clicking into the text, and files being marked modified when switching to Edit</li>
+          <li>New File button in the header</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.5.2" date="2026-09-24">
+      <description>
+        <p>Rich tables are now on by default — tables render as a grid with borders, a styled header row and inline formatting; plain-text tables remain available in Preferences → Writer. Split view keeps the preview aligned with the editor block by block instead of by a whole-document ratio, and double-clicking the divider resets the panes to equal halves. A table no longer stops the divider from narrowing the preview, the header shows the real folder of files opened through the file chooser, and the open-folder button stays visible when the file tree is hidden.</p>
+      </description>
+    </release>
+    <release version="1.5.1" date="2026-08-04">
+      <description>
+        <p>Adaptive-layout fixes for narrow windows. Both sidebars — the left file tree and the right outline — now overlay the content on narrow windows instead of squeezing it, and dock beside it when there is room; the header drops its stats label, title and view-mode toggles (still reachable from the menu) only when the window is genuinely narrow. The vault sidebar's collapsed state is remembered across launches, and content width 0 (unlimited) no longer breaks the layout on narrow windows.</p>
+      </description>
+    </release>
+    <release version="1.5.0" date="2026-07-19">
+      <description>
+        <p>Vault sidebar and working wikilinks. A left-hand file tree shows the current folder (or an explicitly opened vault) — directories expand lazily, a single click opens a Markdown file, and the sidebar docks beside the content on desktop widths while overlaying on narrow screens. Clicking a [[wikilink]] navigates to the matching note, creating it if it does not exist yet; targets are contained to the vault. Setting content width to 0 (unlimited) no longer clamps the view to the window width on startup.</p>
+      </description>
+    </release>
+    <release version="1.4.0" date="2026-05-29">
+      <description>
+        <p>Optional footer with word count, reading time and a daily word goal tracker — the goal icon flips from outline to filled once today's count meets the goal, and a writing-stats dialog is reachable from the hamburger menu. PDF / print export repeats the table header row on every continuation page when a table is split, with an orphan-header guard. Rich-table cells now respond to link clicks and the grid reflows to the TextView width on resize. Keyboard scrolling in View mode (Up/Down/PgUp/PgDn/Home/End/Space). Inter font is shipped inside the Flatpak so the configured default resolves inside the sandbox.</p>
+      </description>
+    </release>
+    <release version="1.3.0" date="2026-05-25">
+      <description>
+        <p>Rich tables — tables now render as embedded GtkGrid widgets with cell borders, header styling, alternating-row backgrounds and inline formatting inside cells (opt-in via Preferences → Writer). PDF and print export draws tables directly via cairo for proper borders, header backgrounds and clean row pagination across page breaks.</p>
+      </description>
+    </release>
+    <release version="1.2.0" date="2026-05-17">
+      <description>
+        <p>Export, search, and editing-flow update. The File menu gains
+        an <code>Export as PDF…</code> action that uses the same Pango
+        layout engine as printing, producing an A4 PDF without an
+        external pandoc / LaTeX dependency. Font family and page
+        margins are configurable in Preferences. Page breaks now clip
+        to the bottom of the last fully fitted line, so a line that
+        overflows starts cleanly on the next page instead of being cut
+        in half.</p>
+        <p>Remote images referenced with
+        <code>![alt](https://…)</code> now actually render: bytes are
+        fetched asynchronously, decoded in-process, cached in memory
+        by URL, and applied to a placeholder Picture once the download
+        completes.</p>
+        <p>The search bar shows a live <code>X / Y</code> match
+        counter; the currently focused match renders in green while
+        the other matches stay yellow. Match highlighting clears
+        automatically when the search bar closes.</p>
+        <p>An optional <em>Auto-save</em> toggle in Preferences writes
+        the current file roughly a second and a half after the last
+        edit; the file-watch reload toast is suppressed during the
+        self-write. A new <em>Quick Open</em> dialog
+        (<code>Ctrl+Shift+O</code>) fuzzy-matches against recent files
+        and markdown siblings of the current document. The default
+        editor font is now Inter, with a graceful fall back to the
+        system sans serif on systems where Inter is not installed.</p>
+      </description>
+    </release>
+    <release version="1.1.0" date="2026-05-14">
+      <description>
+        <p>Visual + performance update. Headings get a graduated blue
+        accent per level (H1 → H6) and a more dramatic scale jump.
+        GitHub-style callouts <code>&gt; [!NOTE]</code>,
+        <code>[!TIP]</code>, <code>[!WARNING]</code>,
+        <code>[!DANGER]</code>, <code>[!IMPORTANT]</code> render as
+        coloured blocks with an icon and bold title; custom titles are
+        supported. Obsidian-style wikilinks
+        <code>[[name]]</code> / <code>[[name|label]]</code> render in a
+        violet accent (vault navigation is a future feature; clicks
+        are captured locally). Embedded images now have rounded corners
+        and always display at a sensible size. Blockquotes get a soft
+        background tint, task markers switch to filled / empty discs,
+        and inline code uses a warmer amber palette. The outline panel
+        always overlays the content instead of pushing it sideways.
+        Performance: focus mode caches the current paragraph and only
+        re-applies the dim tag when the cursor leaves it, typewriter
+        scroll and resize margin recomputation are coalesced through
+        a stored idle, identical font-CSS reloads are skipped, and
+        refresh_view / refresh_split_render now hash-skip when content
+        and theme haven't changed.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-05-14">
+      <description>
+        <p>First stable release. Distraction-free fullscreen (F11, hides
+        chrome and scrollbars), Focus mode (dim text outside the current
+        paragraph) and Typewriter mode (current line pinned to viewport
+        center, half-viewport overscroll added so centering works at the
+        document edges), all toggleable from a new Writer group in
+        Preferences. Print is rewritten: it now prints the rendered
+        markdown — headings keep their size and weight, code blocks keep
+        their shading, lists keep their bullets, tables render as a
+        box-drawing grid. Mobile UX: edge-swipe to open the outline, a
+        bottom action bar with formatting shortcuts (visible on narrow
+        screens while a source view has focus), and horizontal swipe
+        toggles Read and Edit. Split mode now scrolls the rendered pane
+        proportionally to the cursor in the source pane. Inline HTML
+        fragments (such as <code>&lt;br&gt;</code>) are now rendered
+        instead of silently dropped.</p>
+      </description>
+    </release>
+    <release version="0.3.0" date="2026-05-14">
+      <description>
+        <p>Adds Find and Replace (Ctrl+H) with a Replace All button and a green
+        flash on the replaced text, explicit previous / next match buttons in
+        the search bar, inline spell check (toggleable in Preferences, language
+        picker populated from installed dictionaries), and multi-instance file
+        opening so two documents tile side by side. Fixes the Ctrl shortcuts on
+        non-Latin keyboard layouts (Russian, etc.), the outline panel click
+        actually scrolling the view in all three modes, and the search jump
+        landing on the right match in read mode.</p>
+      </description>
+    </release>
+    <release version="0.2.9" date="2026-05-07">
+      <description>
+        <p>Fixes YAML frontmatter being rendered as a thematic break, removes
+        the heading underline that used to wrap into a thick band on narrow
+        windows, and eliminates the last reference cycle keeping windows alive
+        after close. Adds footnotes: <code>[^a]</code> references render as
+        small superscript numbers and definitions appear in a dim style at the
+        bottom.</p>
+      </description>
+    </release>
+    <release version="0.2.8" date="2026-05-06">
+      <description>
+        <p>Adds an outline sidebar (F9) for jumping between headings, smart list
+        continuation, Ctrl+N for a new untitled document, and Ctrl+W to close
+        the current file. Last open file, view mode and scroll position are now
+        restored on launch (toggle in Preferences). Headings with inline code
+        are tagged correctly, fixing the outline and improving rendering.</p>
+      </description>
+    </release>
+    <release version="0.2.7" date="2026-04-28">
+      <description>
+        <p>Adds word count and reading time in the header bar, session zoom
+        (Ctrl+=, Ctrl+-, Ctrl+0), and Markdown editing shortcuts (Ctrl+B, Ctrl+I,
+        Ctrl+K). External file changes now offer a Reload toast instead of
+        overwriting unsaved edits. Tables align correctly with emoji and CJK
+        content, and adjacent lists no longer get a doubled gap.</p>
+      </description>
+    </release>
+    <release version="0.2.6" date="2026-04-19">
+      <description>
+        <p>Fixes full-text search on Cyrillic and emoji text, plugs a tag table leak
+        on file auto-reload, and corrects the "0 = unlimited" content width option.
+        CLI no longer panics on remote URIs.</p>
+      </description>
+    </release>
+    <release version="0.2.5" date="2026-04-01">
+      <description>
+        <p>Major rendering improvements: blank lines from source are now preserved,
+        paragraphs with only bold or inline content no longer merge, and nested
+        lists render correctly. About dialog now adapts to mobile screens.</p>
+      </description>
+    </release>
+    <release version="0.2.4" date="2026-04-01">
+      <description>
+        <p>Fixed table column alignment. Updated icon with proper padding
+        and new screenshots.</p>
+      </description>
+    </release>
+    <release version="0.2.3" date="2026-04-01">
+      <description>
+        <p>Fixed tables with links and formatted text inside cells. Preferences
+        dialog now has a close button on mobile. Upgraded to libadwaita 1.5.</p>
+      </description>
+    </release>
+    <release version="0.2.2" date="2026-03-31">
+      <description>
+        <p>Redesigned app icon to follow GNOME HIG guidelines. Updated
+        screenshots to correct resolution.</p>
+      </description>
+    </release>
+    <release version="0.2.1" date="2026-03-25">
+      <description>
+        <p>Improved Flathub metadata: rewritten app description, simplified
+        desktop categories, updated branding colors, and pinned screenshot
+        URLs to version tags.</p>
+      </description>
+    </release>
+    <release version="0.2.0" date="2026-03-25">
+      <description>
+        <p>Polished rendering with larger headings, underline separators, and
+        better code block styling. Inline formatting now works correctly inside
+        lists. Added content width setting, Ctrl+Y redo, and unlimited undo.</p>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-03-24">
+      <description>
+        <p>Initial release with Markdown rendering, syntax-highlighted code
+        blocks, three view modes (Read, Edit, Split), full-text search, file
+        watching, customizable appearance, and adaptive layout for mobile.</p>
+      </description>
+    </release>
+  </releases>
+</component>

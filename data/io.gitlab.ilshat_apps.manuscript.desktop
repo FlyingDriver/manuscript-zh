@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Manuscript
+Name[zh_CN]=Manuscript 手稿
+Comment=Markdown reader and editor
+Comment[zh_CN]=Markdown 阅读与编辑器
+Keywords=markdown;md;reader;editor;viewer;GTK;GNOME;
+Keywords[zh_CN]=markdown;md;阅读;编辑;写作;笔记;
+Exec=manuscript %U
+Icon=io.gitlab.ilshat_apps.manuscript
+Terminal=false
+Type=Application
+Categories=Utility;TextEditor;
+MimeType=text/markdown;text/x-markdown;

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#62a0ea"/>
+      <stop offset="1" stop-color="#1a5fb4"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fefefe"/>
+      <stop offset="1" stop-color="#edecea"/>
+    </linearGradient>
+    <linearGradient id="roll" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5f4f2"/>
+      <stop offset="0.4" stop-color="#e8e6e3"/>
+      <stop offset="1" stop-color="#d5d3d0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background (8px padding from edges) -->
+  <rect x="8" y="8" width="112" height="112" rx="22" ry="22" fill="url(#bg)"/>
+
+  <!-- Scroll body -->
+  <rect x="30" y="30" width="68" height="68" rx="2" fill="url(#paper)"/>
+
+  <!-- Top roll -->
+  <rect x="26" y="22" width="76" height="14" rx="7" fill="url(#roll)"/>
+  <rect x="30" y="29" width="68" height="4" fill="url(#paper)"/>
+
+  <!-- Bottom roll -->
+  <rect x="26" y="92" width="76" height="14" rx="7" fill="url(#roll)"/>
+  <rect x="30" y="92" width="68" height="4" fill="url(#paper)"/>
+
+  <!-- Markdown heading: # + line -->
+  <rect x="40" y="40" width="7" height="7" rx="1.5" fill="#1a5fb4" opacity="0.85"/>
+  <rect x="52" y="42" width="34" height="3.5" rx="1.5" fill="#2e3436" opacity="0.55"/>
+
+  <!-- Text lines -->
+  <rect x="40" y="54" width="48" height="2.5" rx="1" fill="#2e3436" opacity="0.22"/>
+  <rect x="40" y="61" width="40" height="2.5" rx="1" fill="#2e3436" opacity="0.22"/>
+  <rect x="40" y="68" width="44" height="2.5" rx="1" fill="#2e3436" opacity="0.22"/>
+
+  <!-- Second heading -->
+  <rect x="40" y="78" width="7" height="7" rx="1.5" fill="#1a5fb4" opacity="0.85"/>
+  <rect x="52" y="80" width="26" height="3.5" rx="1.5" fill="#2e3436" opacity="0.55"/>
+
+  <!-- Text line -->
+  <rect x="40" y="90" width="42" height="2.5" rx="1" fill="#2e3436" opacity="0.22"/>
+</svg>
